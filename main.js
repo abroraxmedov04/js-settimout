@@ -6,10 +6,10 @@ let alertShown = false;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  if (input.value < 0) return alert("incorrect number");
-
   let inputValue = parseInt(input.value);
+
+  if (inputValue < 0 || isNaN(inputValue)) return alert("incorrect number");
+
   input.value = "";
 
   let item = document.createElement("li");
